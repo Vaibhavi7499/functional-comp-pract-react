@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import PropsPractise from './PropsPractise';
+import {useState} from 'react';
 
 function App() {
+  const [name,setName]=useState("vaibhavi")
+  const [counter,setCounter]=useState(0)
+ let changeName=()=>{
+    setName("vaibhavi bodke")
+  }
+  let increaseCounter=()=>{
+    setCounter(counter+1)
+  }
+  let decreaseCounter=()=>{
+    if(counter >0){
+    setCounter(counter-1)
+    }
+  }
+  let resetAll=()=>{
+    setCounter(0)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PropsPractise name={name}/>
+      <button onClick={changeName} className='btn btn-info'>click</button><br></br>
+      <h1>{counter}</h1>
+      <button onClick={increaseCounter} className='btn btn-primary'>increase</button>{" "}
+      <button onClick={decreaseCounter} className='btn btn-success'>decrease</button>{" "}
+      <button onClick={resetAll} className='btn btn-danger'>resetAll</button>
+
     </div>
   );
 }
