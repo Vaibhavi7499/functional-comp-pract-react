@@ -1,0 +1,32 @@
+table{
+    margin:auto
+}
+input[type="button"]{
+    height: 50px;
+width: 70px;
+font-size: 30px;
+background-color: green;
+color: white;
+padding: 3px;
+border-radius: 10px;
+border: none;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+input[type="text"]{
+    height: 50px;
+    width: 220px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+}
+.inpt{
+    margin-left: 200px;
+}
+.inpt1{
+    width: 500px;
+}

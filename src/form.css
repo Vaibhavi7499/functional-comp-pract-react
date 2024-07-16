@@ -1,0 +1,31 @@
+.maincontainer{
+    background-color: aliceblue;
+}
+.maincontainer h1{
+    color:brown;
+}
+.maincontainer input{
+    margin-top: 10px;
+}
+label{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: chocolate;
+}
+.maincontainer .inpt3{
+margin-left: 50px;
+}
+
+ .maincontainer .female{
+    margin-left: 100px;
+ }
+ .maincontainer .other{
+    margin-left: 90px;
+ }
+ .genderContainer{
+    margin-right: 200px;
+ }
+ .submitContainer{
+    display: flex;
+    justify-content:center;
+ }
