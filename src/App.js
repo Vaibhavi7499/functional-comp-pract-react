@@ -8,6 +8,8 @@ import Form from './Form';
 import Form1 from './Form1';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
+import UserForm from './UserForm';
+import UserList from './UserList';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -43,6 +45,8 @@ function App() {
 <Routes>
   <Route path='/form' element={<Form/>}/>
   <Route path='/cal' element={<Cal/>}/>
+  <Route path='/userform' element={<UserForm/>}/>
+  <Route path='/userlist' element={<UserList/>}/>
 </Routes>
 </BrowserRouter>
     </div>

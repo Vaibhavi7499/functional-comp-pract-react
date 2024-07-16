@@ -1,12 +1,32 @@
 {
-  "form": [
+  "employeeList": [
     {
-      "firstName": "Vaibhavi",
-      "lastName": "Bodke",
-      "email": "v@gmail.com",
-      "mobileNo": "7499450359",
-      "gender": "female",
-      "city": "Kanheri"
+      "id": "3cc0",
+      "empName": "vaibhavi",
+      "empAddress": "kanheri",
+      "empMobileNo": "7499450359",
+      "empEmail": "v@gmail.com"
+    },
+    {
+      "id": "bacd",
+      "empName": "kishor",
+      "empAddress": "pune",
+      "empMobileNo": "9049416941",
+      "empEmail": "k@gmail.com"
+    },
+    {
+      "id": "9c84",
+      "empName": "Samadhan",
+      "empAddress": "Latur",
+      "empMobileNo": "1234567890",
+      "empEmail": "s@gmail.com"
+    },
+    {
+      "id": "9526",
+      "empName": "vaishnavi",
+      "empAddress": "ausa",
+      "empMobileNo": "1234",
+      "empEmail": "m@gmail.com"
     }
   ]
 }
