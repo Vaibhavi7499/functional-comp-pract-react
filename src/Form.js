@@ -13,14 +13,8 @@ function Form() {
   });
   let [dropDownCity, setCity] = useState([
     { id: 1, name: "Kanheri" },
-    {
-      id: 2,
-      name: "Latur",
-    },
-    {
-      id: 3,
-      name: "Ausa",
-    },
+    { id: 2, name: "Latur" },
+    { id: 3, name: "Ausa"},
   ]);
   let [form, setForm] = useState([]);
   function FirstName(e) {
@@ -59,44 +53,60 @@ function Form() {
       city: e.target.value,
     });
   }
+
+  function UpdateData() {
+    let b = form.map((e) => {
+      if (e.email == user.email) {
+        return {
+          ...e,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          mobileNo: user.mobileNo,
+          city: user.city,
+          isUpdate: false,
+        };
+      } else {
+        return e;
+      }
+    });
+    setForm(b);
+  }
+
+  function addRecord() {
+    setForm(
+      [...form, user],   // adding new object to form array or state
+    ); 
+
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      mobileNo: "",
+      gender: "",
+      city: "",
+    })
+  }
+
   let Submit = () => {
-    if (user.isUpdate) {
-      let b = form.map((e) => {
-        if (e.email == user.email) {
-          return {
-            ...e,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
-            mobileNo: user.mobileNo,
-            city: user.city,
-            isUpdate: false,
-          };
-        } else {
-          return e;
-        }
-      });
-      setForm(b);
-    } else {
-      setForm(
-        [...form, user],
-        setUser({
-          firstName: "",
-          lastName: "",
-          email: "",
-          mobileNo: "",
-          gender: "",
-          city: "",
-        })
-      );
-    }
+      if (user.isUpdate) {
+        UpdateData();
+      } else {
+        addRecord();
+      }
   };
+
+  /** Delete records */
+
   let deleteItems = (email) => {
     let a = form.filter((ele) => {
       return ele.email != email;
     });
     setForm(a);
   };
+
+/** Update records */
+
   let updateItem = (e) => {
     setUser({
       firstName: e.firstName,
@@ -178,7 +188,7 @@ function Form() {
 
         <br></br>
       </div>
-      <button onClick={Submit} className="btn btn-primary mt-2">
+      <button onClick={Submit} className="btn btn-primary mt-2"  >
         {user.isUpdate ? "Update" : "Add"}
       </button>
       <Form1 data={form} deleteItems={deleteItems} updateItem={updateItem} />

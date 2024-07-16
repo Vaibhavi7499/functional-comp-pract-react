@@ -1,12 +1,12 @@
 import React from "react";
 
 function Form1(props) {
-  console.log(props);
   // function deleteRow(email){
   // props.deleteItems(email)
   // }
   return (
     <div>
+      <h1>Child Comp</h1>
       <table className="table">
         <thead>
           <tr>
@@ -19,7 +19,7 @@ function Form1(props) {
           </tr>
         </thead>
         <tbody>
-          {props.data.map((e) => (
+          {props.data?.length && props.data.map((e) => (
             <tr>
               <td key={e.id}>
                 {e.firstName} {e.lastName}
@@ -33,7 +33,7 @@ function Form1(props) {
                   className="btn btn-success"
                   onClick={() => props.updateItem(e)}
                 >
-                  update
+                  row update
                 </button>{" "}
                 <button
                   className="btn btn-danger"
