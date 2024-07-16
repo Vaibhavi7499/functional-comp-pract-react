@@ -14,7 +14,8 @@ function UserForm() {
   const navigate=useNavigate()
 const params=useParams()
 useEffect(()=>{
-axios.get(API_URL + "/" +params.id).then((res)=>{
+if(params?.id){
+  axios.get(API_URL + "/" +params.id).then((res)=>{
     console.log(res)
     setEmpData({
         empName: res.data.empName,
@@ -23,6 +24,7 @@ axios.get(API_URL + "/" +params.id).then((res)=>{
         empEmail:res.data.empEmail,
     })
 })
+}
 },[params.id])
   function getEmpName(e) {
     setEmpData({
