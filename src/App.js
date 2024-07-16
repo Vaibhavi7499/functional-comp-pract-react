@@ -47,6 +47,7 @@ function App() {
   <Route path='/cal' element={<Cal/>}/>
   <Route path='/userform' element={<UserForm/>}/>
   <Route path='/userlist' element={<UserList/>}/>
+  <Route path='/userform/:id' element={<UserForm/>}/>
 </Routes>
 </BrowserRouter>
     </div>

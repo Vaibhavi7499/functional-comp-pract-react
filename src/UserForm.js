@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { API_URL } from "./API";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function UserForm() {
   let [employeeData, setEmpData] = useState({
@@ -11,7 +12,18 @@ function UserForm() {
     empEmail: "",
   });
   const navigate=useNavigate()
-
+const params=useParams()
+useEffect(()=>{
+axios.get(API_URL + "/" +params.id).then((res)=>{
+    console.log(res)
+    setEmpData({
+        empName: res.data.empName,
+        empAddress:res.data.empAddress,
+        empMobileNo:res.data.empMobileNo,
+        empEmail:res.data.empEmail,
+    })
+})
+},[params.id])
   function getEmpName(e) {
     setEmpData({
       ...employeeData,

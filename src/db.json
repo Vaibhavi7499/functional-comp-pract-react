@@ -15,18 +15,11 @@
       "empEmail": "k@gmail.com"
     },
     {
-      "id": "9c84",
       "empName": "Samadhan",
       "empAddress": "Latur",
+      "empEmail": "s@gmail.com",
       "empMobileNo": "1234567890",
-      "empEmail": "s@gmail.com"
-    },
-    {
-      "id": "9526",
-      "empName": "vaishnavi",
-      "empAddress": "ausa",
-      "empMobileNo": "1234",
-      "empEmail": "m@gmail.com"
+      "id": "9c84"
     }
   ]
 }

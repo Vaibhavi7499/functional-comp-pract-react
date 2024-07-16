@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "./API";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function UserList() {
   let [userInfo, setUserInfo] = useState([]);
+  const navigate=useNavigate()
   function getUserData() {
     axios
       .get(API_URL)
@@ -16,6 +18,17 @@ function UserList() {
   useEffect(() => {
     getUserData();
   }, []);
+  function deleteItem(id){
+    axios({
+        url:API_URL+"/"+id,
+        method:"DELETE"
+    }).then((res)=>{
+         getUserData();
+    })
+  }
+  function updateItem(obj){
+    navigate("/userform/"+obj.id)
+  }
   return (
     <div>
       <table className="table mt-5 ">
@@ -36,8 +49,8 @@ function UserList() {
               <td>{e.empEmail}</td>
               <td>{e.empMobileNo}</td>
               <td>
-                <button className="btn btn-success">update</button>{" "}
-                <button className="btn btn-danger">delete</button>
+                <button className="btn btn-success" onClick={()=>updateItem(e)}>update</button>{" "}
+                <button className="btn btn-danger" onClick={()=>deleteItem(e.id)}>delete</button>
               </td>
             </tr>
           ))}
