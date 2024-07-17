@@ -15,7 +15,6 @@ function UseState() {
             }
         ])
     }
-    console.log(items)
   return (
     <div>
         <div className="border border-warning border-3">
