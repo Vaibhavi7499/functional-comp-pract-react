@@ -51,15 +51,26 @@ if(params?.id){
     });
   }
   let addEmpData = () => {
-    axios({
-      url: API_URL,
-      method: "POST",
-      data: employeeData,
-    }).then((res)=>{
-        console.log(res)
-        navigate("/userlist")
-    });
-  };
+    if(params.id){
+axios({
+  url:API_URL + "/" + params.id,
+  method:"PUT",
+  data:employeeData
+}).then((res)=>{
+  navigate("/userlist")
+})
+    }else{
+
+      axios({
+        url: API_URL,
+        method: "POST",
+        data: employeeData,
+      }).then((res)=>{
+          console.log(res)
+          navigate("/userlist")
+      });
+    };
+    }
   console.log(employeeData);
   return (
     <div>
@@ -96,7 +107,9 @@ if(params?.id){
       ></input>
       <br></br>
       <button className="btn btn-info mt-3" onClick={addEmpData}>
-        Add
+        {
+          params?.id ? "Update" : "Add"
+        }
       </button>
     </div>
   );

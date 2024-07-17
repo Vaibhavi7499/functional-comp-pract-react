@@ -11,6 +11,7 @@ import Layout from './Layout';
 import UserForm from './UserForm';
 import UserList from './UserList';
 import UseState from './UseState';
+import UseEffectHook from './UseEffectHook';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -41,7 +42,7 @@ function App() {
 {/* <Cal/> */}
 {/* <Form/> */}
 {/* <Form1/> */}
-{/* <BrowserRouter>
+<BrowserRouter>
 <Layout/>
 <Routes>
   <Route path='/form' element={<Form/>}/>
@@ -49,9 +50,12 @@ function App() {
   <Route path='/userform' element={<UserForm/>}/>
   <Route path='/userlist' element={<UserList/>}/>
   <Route path='/userform/:id' element={<UserForm/>}/>
+  <Route path='/usestate' element={<UseState/>}/>
+  <Route path='/useeffect' element={<UseEffectHook/>}/>
 </Routes>
-</BrowserRouter> */}
-<UseState/>
+</BrowserRouter>
+{/* <UseState/> */}
+
     </div>
   );
 }

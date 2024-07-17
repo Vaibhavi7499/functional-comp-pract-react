@@ -1,13 +1,6 @@
 {
   "employeeList": [
     {
-      "id": "3cc0",
-      "empName": "vaibhavi",
-      "empAddress": "kanheri",
-      "empMobileNo": "7499450359",
-      "empEmail": "v@gmail.com"
-    },
-    {
       "id": "bacd",
       "empName": "kishor",
       "empAddress": "pune",
@@ -15,11 +8,11 @@
       "empEmail": "k@gmail.com"
     },
     {
-      "empName": "Samadhan",
-      "empAddress": "Latur",
-      "empEmail": "s@gmail.com",
-      "empMobileNo": "1234567890",
-      "id": "9c84"
+      "id": "74db",
+      "empName": "vaibhavi",
+      "empAddress": "kanheri",
+      "empMobileNo": "12234",
+      "empEmail": "v@gmail.com"
     }
   ]
 }
