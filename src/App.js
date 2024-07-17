@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import UserForm from './UserForm';
 import UserList from './UserList';
+import UseState from './UseState';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -40,7 +41,7 @@ function App() {
 {/* <Cal/> */}
 {/* <Form/> */}
 {/* <Form1/> */}
-<BrowserRouter>
+{/* <BrowserRouter>
 <Layout/>
 <Routes>
   <Route path='/form' element={<Form/>}/>
@@ -49,7 +50,8 @@ function App() {
   <Route path='/userlist' element={<UserList/>}/>
   <Route path='/userform/:id' element={<UserForm/>}/>
 </Routes>
-</BrowserRouter>
+</BrowserRouter> */}
+<UseState/>
     </div>
   );
 }
