@@ -52,6 +52,16 @@ function Layout() {
                   useEffect
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/studentform">
+                  Student Form
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/studentlist">
+                  Student List
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

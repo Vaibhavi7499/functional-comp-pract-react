@@ -1,18 +1,58 @@
 {
   "employeeList": [
     {
-      "id": "bacd",
-      "empName": "kishor",
-      "empAddress": "pune",
-      "empMobileNo": "9049416941",
-      "empEmail": "k@gmail.com"
+      "empName": "vaibhavi",
+      "empAddress": "kanheri",
+      "empMobileNo": "7499450359",
+      "empEmail": "v@gmail.com",
+      "city": "Kanheri",
+      "id": "de67"
     },
     {
-      "empName": "vaibhe",
+      "id": "d5c6",
+      "empName": "kishor",
       "empAddress": "kanheri",
-      "empMobileNo": "12234",
-      "empEmail": "v@gmail.com",
-      "id": "74db"
+      "empMobileNo": "9049416941",
+      "empEmail": "k@gmail.com",
+      "city": "Pune"
+    }
+  ],
+  "studentList": [
+    {
+      "id": "f9ab",
+      "studentName": "v",
+      "address": "k",
+      "mobileNo": "1",
+      "email": "b"
+    },
+    {
+      "id": "c1e8",
+      "studentName": "k",
+      "address": "l",
+      "mobileNo": "m",
+      "email": "g"
+    }
+  ],
+  "cities": [
+    {
+      "id": "1",
+      "name": "Pune"
+    },
+    {
+      "id": "2",
+      "name": "Latur"
+    },
+    {
+      "id": "3",
+      "name": "Ausa"
+    },
+    {
+      "id": "4",
+      "name": "Kanheri"
+    },
+    {
+      "id": "5",
+      "name": "Mumbai"
     }
   ]
 }

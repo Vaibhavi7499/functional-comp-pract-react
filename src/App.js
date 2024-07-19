@@ -12,6 +12,10 @@ import UserForm from './UserForm';
 import UserList from './UserList';
 import UseState from './UseState';
 import UseEffectHook from './UseEffectHook';
+import StudentForm from './StudentForm';
+import StudentList from './StudentList';
+import RefClass from './RefClass';
+import RefFunc from './RefFunc';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -52,10 +56,13 @@ function App() {
   <Route path='/userform/:id' element={<UserForm/>}/>
   <Route path='/usestate' element={<UseState/>}/>
   <Route path='/useeffect' element={<UseEffectHook/>}/>
+  <Route path='/studentform' element={<StudentForm/>}/>
+  <Route path='/studentlist' element={<StudentList/>}/>
 </Routes>
 </BrowserRouter>
 {/* <UseState/> */}
-
+{/* <RefClass/> */}
+{/* <RefFunc/> */}
     </div>
   );
 }

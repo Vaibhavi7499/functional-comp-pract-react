@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_URL } from "./API";
+import { API_URL, Cities_API_URL } from "./API";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -11,7 +11,10 @@ function UserForm() {
     empAddress: "",
     empMobileNo: "",
     empEmail: "",
+    city:""
   });
+
+  let [city, setCity] = useState([]);
   const navigate = useNavigate();
   const params = useParams();
 
@@ -23,11 +26,26 @@ function UserForm() {
           empAddress: res.data.empAddress,
           empMobileNo: res.data.empMobileNo,
           empEmail: res.data.empEmail,
+          city:res.data.city
         });
       });
     }
   }, [params.id]);
 
+  useEffect(() => {
+    getCities();
+  }, []);
+
+  function getCities() {
+    axios
+      .get(Cities_API_URL)
+      .then((res) => {
+        setCity(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   function getEmpName(e) {
     setEmpData({
@@ -57,6 +75,12 @@ function UserForm() {
     });
   }
 
+  function getCityName(e){
+    setEmpData({
+      ...employeeData,
+      city:e.target.value
+    })
+  }
   let addEmpData = () => {
     if (params.id) {
       axios({
@@ -76,7 +100,7 @@ function UserForm() {
       });
     }
   };
-  
+
   return (
     <div className="container">
       <h1>{params?.id ? "Update" : "Add"} Employee</h1>
@@ -119,6 +143,14 @@ function UserForm() {
             value={employeeData.empEmail}
             onChange={(e) => getEmpEmail(e)}
           />
+        </div>
+        <div>
+          <select class="form-select" value={employeeData.city} onChange={(e)=>getCityName(e)}>
+            <option disabled selected value="">Select City</option>
+            {city.map((e) => (
+              <option key={e.id}>{e.name}</option>
+            ))}
+          </select>
         </div>
 
         <button className="btn btn-primary mt-3" onClick={addEmpData}>

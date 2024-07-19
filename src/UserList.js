@@ -36,8 +36,9 @@ function UserList() {
           <tr>
             <th>Employee Name</th>
             <th>Address</th>
-            <th>Mobile No</th>
             <th>Email</th>
+            <th>Mobile No</th>
+            <th>City</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -48,6 +49,7 @@ function UserList() {
               <td>{e.empAddress}</td>
               <td>{e.empEmail}</td>
               <td>{e.empMobileNo}</td>
+              <td>{e.city}</td>
               <td>
                 <button className="btn btn-success" onClick={()=>updateItem(e)}>update</button>{" "}
                 <button className="btn btn-danger" onClick={()=>deleteItem(e.id)}>delete</button>
