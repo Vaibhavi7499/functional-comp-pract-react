@@ -76,7 +76,7 @@ function StudentForm() {
     });
   }
 
-  let addStudentData = () => {
+  let addEditStudentData = () => {
     if (params.id) {
       updateStudentData();
     } else {
@@ -127,7 +127,7 @@ function StudentForm() {
           />
         </div>
 
-        <button className="btn btn-primary mt-3" onClick={addStudentData}>
+        <button className="btn btn-primary mt-3" onClick={addEditStudentData}>
           {params.id ? "Update" : "Add"}
         </button>
       </div>
