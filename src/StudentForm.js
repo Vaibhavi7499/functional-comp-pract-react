@@ -26,7 +26,7 @@ function StudentForm() {
         });
       });
     }
-  },[params.id]);
+  }, [params.id]);
 
   function getStudentName(e) {
     setStudent({
@@ -56,23 +56,31 @@ function StudentForm() {
     });
   }
 
+  function updateStudentData() {
+    axios({
+      url: Student_API_URL + "/" + params.id,
+      method: "PUT",
+      data: student,
+    }).then((res) => {
+      navigate("/studentlist");
+    });
+  }
+
+  function addStudentData() {
+    axios({
+      url: Student_API_URL,
+      method: "POST",
+      data: student,
+    }).then((res) => {
+      navigate("/studentlist");
+    });
+  }
+
   let addStudentData = () => {
     if (params.id) {
-      axios({
-        url: Student_API_URL + "/" + params.id,
-        method: "PUT",
-        data: student,
-      }).then((res) => {
-        navigate("/studentlist")
-      });
+      updateStudentData();
     } else {
-      axios({
-        url: Student_API_URL,
-        method: "POST",
-        data: student,
-      }).then((res) => {
-        navigate("/studentlist");
-      });
+      addStudentData();
     }
   };
   return (
