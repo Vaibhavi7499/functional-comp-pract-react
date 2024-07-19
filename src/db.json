@@ -19,18 +19,11 @@
   ],
   "studentList": [
     {
-      "id": "f9ab",
-      "studentName": "v",
-      "address": "k",
-      "mobileNo": "1",
-      "email": "b"
-    },
-    {
-      "id": "c1e8",
-      "studentName": "k",
-      "address": "l",
-      "mobileNo": "m",
-      "email": "g"
+      "studentName": "kishor shripati phawade",
+      "address": "pune",
+      "mobileNo": "12345",
+      "email": "k@gmail.com",
+      "id": "6546"
     }
   ],
   "cities": [

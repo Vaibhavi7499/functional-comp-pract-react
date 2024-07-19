@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Student_API_URL } from "./API";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function StudentList() {
   let [studentInfo, setStudentInfo] = useState([]);
+const navigate=useNavigate();
+
 
   function getStudentData() {
     axios
@@ -19,6 +22,18 @@ function StudentList() {
   useEffect(() => {
     getStudentData();
   }, []);
+
+  let deleteItem=(id)=>{
+axios({
+  url:Student_API_URL + "/" + id,
+  method:"DELETE",
+}).then((res)=>{
+  getStudentData()
+})
+  }
+  let updataItem=(obj)=>{
+    navigate("/studentform/" + obj.id)
+  }
   return (
     <div>
       <h1>Student List</h1>
@@ -40,8 +55,8 @@ function StudentList() {
               <td>{e.mobileNo}</td>
               <td>{e.email}</td>
               <td>
-                <button className="btn btn-success">update</button>{" "}
-                <button className="btn btn-danger">delete</button>
+                <button className="btn btn-success" onClick={()=>updataItem(e)}>update</button>{" "}
+                <button className="btn btn-danger" onClick={()=>deleteItem(e.id)}>delete</button>
               </td>
             </tr>
           ))}

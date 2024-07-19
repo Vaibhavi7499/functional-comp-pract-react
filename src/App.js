@@ -57,6 +57,7 @@ function App() {
   <Route path='/usestate' element={<UseState/>}/>
   <Route path='/useeffect' element={<UseEffectHook/>}/>
   <Route path='/studentform' element={<StudentForm/>}/>
+  <Route path='/studentform/:id' element={<StudentForm/>}/>
   <Route path='/studentlist' element={<StudentList/>}/>
 </Routes>
 </BrowserRouter>

@@ -1,81 +1,127 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./userForm.module.css";
 import axios from "axios";
 import { Student_API_URL } from "./API";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function StudentForm() {
-    let [student,setStudent]=useState({
-        studentName:"",
-        address:"",
-        mobileNo:"",
-        email:""
-    })
+  let [student, setStudent] = useState({
+    studentName: "",
+    address: "",
+    mobileNo: "",
+    email: "",
+  });
 
-    const navigate = useNavigate();
-
-    function getStudentName(e){
-setStudent({
-    ...student,
-    studentName:e.target.value
-})
-    }
-
-    function getStudentAddress(e){
+  const navigate = useNavigate();
+  const params = useParams();
+  useEffect(() => {
+    if (params.id) {
+      axios.get(Student_API_URL + "/" + params.id).then((res) => {
         setStudent({
-            ...student,
-            address:e.target.value
-        })
+          studentName: res.data.studentName,
+          address: res.data.address,
+          mobileNo: res.data.mobileNo,
+          email: res.data.email,
+        });
+      });
     }
+  },[params.id]);
 
-    function getStudentMobNo(e){
-        setStudent({
-            ...student,
-            mobileNo:e.target.value
-        })
-    }
+  function getStudentName(e) {
+    setStudent({
+      ...student,
+      studentName: e.target.value,
+    });
+  }
 
-    function getStudentEmail(e){
-        setStudent({
-            ...student,
-            email:e.target.value
-        })
-    }
+  function getStudentAddress(e) {
+    setStudent({
+      ...student,
+      address: e.target.value,
+    });
+  }
 
-    let addStudentData=()=>{
-axios({
-    url:Student_API_URL,
-    method:"POST",
-    data:student,
-}).then((res)=>{
-  navigate("/studentlist")
-})
+  function getStudentMobNo(e) {
+    setStudent({
+      ...student,
+      mobileNo: e.target.value,
+    });
+  }
+
+  function getStudentEmail(e) {
+    setStudent({
+      ...student,
+      email: e.target.value,
+    });
+  }
+
+  let addStudentData = () => {
+    if (params.id) {
+      axios({
+        url: Student_API_URL + "/" + params.id,
+        method: "PUT",
+        data: student,
+      }).then((res) => {
+        navigate("/studentlist")
+      });
+    } else {
+      axios({
+        url: Student_API_URL,
+        method: "POST",
+        data: student,
+      }).then((res) => {
+        navigate("/studentlist");
+      });
     }
+  };
   return (
     <div className="container">
-      <h1> Student Form</h1>
+      <h1> {params.id ? "Update" : "Add"} Student</h1>
       <div className={style.centerDiv}>
         <div className="mb-3 form-group">
           <label className="form-label">Student Name</label>
-          <input type="text" className="form-control" value={student.studentName} onChange={(e)=>getStudentName(e)} />
+          <input
+            type="text"
+            className="form-control"
+            value={student.studentName}
+            onChange={(e) => getStudentName(e)}
+          />
         </div>
 
         <div className="mb-3 form-group">
           <label className="form-label">Address</label>
-          <input type="text" className="form-control" value={student.address} onChange={(e)=>getStudentAddress(e)} />
+          <input
+            type="text"
+            className="form-control"
+            value={student.address}
+            onChange={(e) => getStudentAddress(e)}
+          />
         </div>
 
         <div className="mb-3 form-group">
           <label className="form-label">Mobile No</label>
-          <input type="text" className="form-control" value={student.mobileNo} onChange={(e)=>getStudentMobNo(e)} />
+          <input
+            type="text"
+            className="form-control"
+            value={student.mobileNo}
+            onChange={(e) => getStudentMobNo(e)}
+          />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Email</label>
-          <input type="text" className="form-control" value={student.email} onChange={(e)=>getStudentEmail(e)}/>
+          <input
+            type="text"
+            className="form-control"
+            value={student.email}
+            onChange={(e) => getStudentEmail(e)}
+          />
         </div>
 
-        <button className="btn btn-primary mt-3" onClick={addStudentData}>add</button>
+        <button className="btn btn-primary mt-3" onClick={addStudentData}>
+          {params.id ? "Update" : "Add"}
+        </button>
       </div>
     </div>
   );
