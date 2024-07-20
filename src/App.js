@@ -16,6 +16,8 @@ import StudentForm from './StudentForm';
 import StudentList from './StudentList';
 import RefClass from './RefClass';
 import RefFunc from './RefFunc';
+import Todo from './Todo';
+import TodoList from './TodoList';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -59,6 +61,9 @@ function App() {
   <Route path='/studentform' element={<StudentForm/>}/>
   <Route path='/studentform/:id' element={<StudentForm/>}/>
   <Route path='/studentlist' element={<StudentList/>}/>
+  <Route path='/todo' element={<Todo/>}/>
+  <Route path='/todo/:id' element={<Todo/>}/>
+  <Route path='/todolist' element={<TodoList/>}/>
 </Routes>
 </BrowserRouter>
 {/* <UseState/> */}

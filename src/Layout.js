@@ -62,6 +62,17 @@ function Layout() {
                   Student List
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/todo">
+                  Todo
+                </Link>
+              </li>
+              
+              <li class="nav-item">
+                <Link className="nav-link" to="/todolist">
+                  Todo List
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
