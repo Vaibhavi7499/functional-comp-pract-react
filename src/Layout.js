@@ -22,7 +22,7 @@ function Layout() {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <Link className="nav-link" to={"/userform"}>
                   User Form
                 </Link>
@@ -61,7 +61,7 @@ function Layout() {
                 <Link className="nav-link" to="/studentlist">
                   Student List
                 </Link>
-              </li>
+              </li> */}
               <li class="nav-item">
                 <Link className="nav-link" to="/todo">
                   Todo
@@ -71,6 +71,16 @@ function Layout() {
               <li class="nav-item">
                 <Link className="nav-link" to="/todolist">
                   Todo List
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/contactform">
+                  Contact Form
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/contactlist">
+                  Contact List
                 </Link>
               </li>
             </ul>

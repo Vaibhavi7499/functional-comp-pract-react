@@ -18,6 +18,8 @@ import RefClass from './RefClass';
 import RefFunc from './RefFunc';
 import Todo from './Todo';
 import TodoList from './TodoList';
+import ContactForm from './ContactForm';
+import ContactList from './ContactList';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -64,6 +66,9 @@ function App() {
   <Route path='/todo' element={<Todo/>}/>
   <Route path='/todo/:id' element={<Todo/>}/>
   <Route path='/todolist' element={<TodoList/>}/>
+  <Route path='/contactform' element={<ContactForm/>}/>
+  <Route path='/contactform/:id' element={<ContactForm/>}/>
+  <Route path='/contactlist' element={<ContactList/>}/>
 </Routes>
 </BrowserRouter>
 {/* <UseState/> */}
