@@ -145,7 +145,7 @@ function UserForm() {
           />
         </div>
         <div>
-          <select class="form-select" value={employeeData.city} onChange={(e)=>getCityName(e)}>
+          <select className="form-select" value={employeeData.city} onChange={(e)=>getCityName(e)}>
             <option disabled selected value="">Select City</option>
             {city.map((e) => (
               <option key={e.id}>{e.name}</option>

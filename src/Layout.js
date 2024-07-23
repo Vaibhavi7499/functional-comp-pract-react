@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 function Layout() {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             Employee Mangement System
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -18,67 +18,67 @@ function Layout() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              {/* <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to={"/userform"}>
                   User Form
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to={"/userlist"}>
                   User List
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to={"/form"}>
                   Form
                 </Link>{" "}
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to={"/cal"}>
                   Calculator
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/usestate">
                   useState
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/useeffect">
                   useEffect
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/studentform">
                   Student Form
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/studentlist">
                   Student List
                 </Link>
               </li> */}
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/todo">
                   Todo
                 </Link>
               </li>
               
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/todolist">
                   Todo List
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/contactform">
                   Contact Form
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/contactlist">
                   Contact List
                 </Link>

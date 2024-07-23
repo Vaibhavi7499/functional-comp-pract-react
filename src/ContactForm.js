@@ -41,6 +41,16 @@ function ContactForm() {
       });
   }
 
+  function updateContact() {
+    axios({
+      url: Contact_API_URL + "/" + params.id,
+      method: "PUT",
+      data: contact,
+    }).then((res)=>{
+      navigate("/contactlist")
+    })
+  }
+
   useEffect(()=>{
     if(params.id){
         axios.get(Contact_API_URL + "/" + params.id).then((res)=>{
@@ -54,16 +64,10 @@ function ContactForm() {
 
   let add = () => {
     if(contact.name == "" && contact.email == ""){
-alert("Oops! Something went wrong..!!!  Please enter the Name and Email")
+    alert("Oops! Something went wrong..!!!  Please enter the Name and Email")
     }else{
       if (params.id) {
-        axios({
-          url: Contact_API_URL + "/" + params.id,
-          method: "PUT",
-          data: contact,
-        }).then((res)=>{
-          navigate("/contactlist")
-        })
+        updateContact()
       } else {
         addContact();
       }
