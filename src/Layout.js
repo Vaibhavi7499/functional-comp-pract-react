@@ -83,6 +83,11 @@ function Layout() {
                   Contact List
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/counterIncDec">
+                  Counter
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

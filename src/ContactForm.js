@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "./userForm.module.css";
 import axios from "axios";
 import { Contact_API_URL } from "./API";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { myContext } from "./context/Counter";
 function ContactForm() {
+  const {counter, setCounter} = useContext(myContext)
   let [contact, setContact] = useState({
     name: "",
     email: "",
@@ -76,6 +77,7 @@ function ContactForm() {
   };
   return (
     <div className={style.centerDiv}>
+      <h1>{counter}</h1>
       <h1>Contact Manager</h1>
       <h3>{params.id ? "Edit" : "Add"} Contact</h3>
       <label>Name</label>

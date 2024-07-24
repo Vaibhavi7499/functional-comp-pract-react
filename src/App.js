@@ -20,6 +20,7 @@ import Todo from './Todo';
 import TodoList from './TodoList';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
+import CounterIncDec from './CounterIncDec';
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -69,6 +70,7 @@ function App() {
   <Route path='/contactform' element={<ContactForm/>}/>
   <Route path='/contactform/:id' element={<ContactForm/>}/>
   <Route path='/contactlist' element={<ContactList/>}/>
+  <Route path='/counterIncDec' element={<CounterIncDec/>}/>
 </Routes>
 </BrowserRouter>
 {/* <UseState/> */}
