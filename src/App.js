@@ -21,6 +21,7 @@ import TodoList from './TodoList';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import CounterIncDec from './CounterIncDec';
+import Todos from "./useReducerHook/Todos";
 
 function App() {
   const [name,setName]=useState("vaibhavi")
@@ -71,6 +72,7 @@ function App() {
   <Route path='/contactform/:id' element={<ContactForm/>}/>
   <Route path='/contactlist' element={<ContactList/>}/>
   <Route path='/counterIncDec' element={<CounterIncDec/>}/>
+  <Route path='/todosuseReducer' element={<Todos/>}/>
 </Routes>
 </BrowserRouter>
 {/* <UseState/> */}

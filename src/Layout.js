@@ -88,6 +88,11 @@ function Layout() {
                   Counter
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/todosuseReducer">
+                  Todo using useReducer
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
