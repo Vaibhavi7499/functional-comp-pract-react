@@ -90,7 +90,17 @@ function Layout() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/todosuseReducer">
-                  Todo using useReducer
+                  useReducer
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/compA">
+                  CompA
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/compB">
+                  CompB
                 </Link>
               </li>
             </ul>
